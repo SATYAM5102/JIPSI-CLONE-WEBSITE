@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "deploy": "cross-env NEXT_PUBLIC_BASE_PATH=/JIPSI-CLONE-WEBSITE next build && gh-pages -d out"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "15.5.3",
@@ -21,8 +20,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.5.3",
-    "gh-pages": "^6.3.0",
-    "cross-env": "^7.0.3"
+    "eslint-config-next": "15.5.3"
   }
 }
