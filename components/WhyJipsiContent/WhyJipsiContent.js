@@ -27,7 +27,7 @@ const WhyJipsiContent = () => {
     <>
       <section className={styles.mainContentSection}>
         <div className="container">
-          <h2 className={styles.title}>India's First Exclusive Sports & Musculoskeletal Radiology Institute</h2>
+          <h2 className={styles.title}>India&apos;s First Exclusive Sports & Musculoskeletal Radiology Institute</h2>
           <div className={styles.textBlock}>
             {/* Add all the paragraphs from the original site here */}
             <p>At JIPSI , we bring together a team of internationally acclaimed experts dedicated to providing the highest standard of care for musculoskeletal and sports injuries. Our multidisciplinary team includes MSK and sports radiologist, interventional pain physician, physiotherapists, and rehabilitation specialists who work collaboratively to ensure you receive the most effective treatment.
@@ -54,7 +54,7 @@ Choose JIPSI for comprehensive, expert care that helps you recover faster and st
           <h2 className={styles.title}>What We Do Best</h2>
           <div className={styles.textBlock}>
             <p>At JIPSI, we specialize in providing effective, minimally-invasive treatments designed to reduce chronic pain and sports injuries without the need for surgery. Our comprehensive approach blends pharmacology, physiotherapy, and advanced pain management interventions to ensure a pain-free future, all with minimal side effects. Our team of experts is highly skilled in treating a wide range of injuries—from chronic pain to sports injuries—helping athletes and patients alike find lasting relief. We pride ourselves on offering personalized care, with a strong focus on accurately diagnosing the source of pain, allowing us to target treatment directly at the pain generator. In our commitment to excellence, we are proud to have launched India’s First Exclusive Sports & Musculoskeletal Radiology Institute, a milestone that has already helped numerous patients. Our vision is to become one of the top 10 stand-alone MSK centers in the world, shaping not only outstanding treatment but also education in the field.</p>
-            <p>24x7 Support We are here to support you around the clock. Whether you're recovering from an injury or experiencing persistent pain, our compassionate team is ready to provide the care you need to get back to your best. For immediate assistance or to book an appointment, call us anytime. We’re here to offer you a path toward a pain-free, healthier future.</p>
+            <p>24x7 Support We are here to support you around the clock. Whether you&apos;re recovering from an injury or experiencing persistent pain, our compassionate team is ready to provide the care you need to get back to your best. For immediate assistance or to book an appointment, call us anytime. We’re here to offer you a path toward a pain-free, healthier future.</p>
             {/* ... other paragraphs ... */}
           </div>
           <div className={styles.servicesGrid}>
