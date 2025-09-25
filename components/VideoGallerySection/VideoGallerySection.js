@@ -1,12 +1,13 @@
 import styles from './VideoGallerySection.module.css';
 import Slider from 'react-slick';
 import VideoPlayerCard from './VideoPlayerCard'; // Import our new self-contained component
+import { withBasePath } from '../../utils/basePath';
 
 const videos = [
-  { thumbnail: '/images/video-thumb-1.jpg', youtubeLink: 'https://www.youtube.com/watch?v=sEe7pl4gG5g' },
-  { thumbnail: '/images/video-thumb-2.jpg', youtubeLink: 'https://www.youtube.com/watch?v=FLeFfJ1a4iQ' },
-  { thumbnail: '/images/video-thumb-3.jpg', youtubeLink: 'https://www.youtube.com/watch?v=uA0GfjS_g5g' },
-  { thumbnail: '/images/video-thumb-4.jpg', youtubeLink: 'https://www.youtube.com/watch?v=PbiwT-8I92g' }
+  { thumbnail: withBasePath('/images/video-thumb-1.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=sEe7pl4gG5g' },
+  { thumbnail: withBasePath('/images/video-thumb-2.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=FLeFfJ1a4iQ' },
+  { thumbnail: withBasePath('/images/video-thumb-3.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=uA0GfjS_g5g' },
+  { thumbnail: withBasePath('/images/video-thumb-4.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=PbiwT-8I92g' }
 ];
 
 const VideoGallerySection = () => {

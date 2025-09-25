@@ -1,5 +1,6 @@
 import styles from './DoctorsSection.module.css';
 import Image from 'next/image';
+import { withBasePath } from '../../utils/basePath';
 
 const DoctorsSection = () => {
   return (
@@ -14,7 +15,7 @@ const DoctorsSection = () => {
           <div className={styles.doctorCard}>
             <div className={styles.imageWrapper}>
               <Image
-                src="/images/dr-prableen-kaur.jpg"
+                src={withBasePath('/images/dr-prableen-kaur.jpg')}
                 alt="Dr. Prableen Kaur"
                 width={300}
                 height={0}
@@ -28,7 +29,7 @@ const DoctorsSection = () => {
           <div className={styles.doctorCard}>
             <div className={styles.imageWrapper}>
               <Image
-                src="/images/dr-gaurav-kant-sharma.jpg"
+                src={withBasePath('/images/dr-gaurav-kant-sharma.jpg')}
                 alt="Dr. Gaurav Kant Sharma"
                 width={300}
                 height={0}

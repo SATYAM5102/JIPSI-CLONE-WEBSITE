@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'; // Import useState and useEffect
 import styles from './ExpertAdviceModal.module.css';
 import Image from 'next/image';
 import { FaTimes } from 'react-icons/fa';
+import { withBasePath } from '../../utils/basePath';
 
 const ExpertAdviceModal = ({ isOpen, onClose }) => {
   // NEW: State to track if the form has been submitted
@@ -40,7 +41,7 @@ const ExpertAdviceModal = ({ isOpen, onClose }) => {
         </button>
 
         <div className={styles.logoContainer}>
-          <Image src="/images/modal-logo-icon.png" alt="JIPSI Icon" width={80} height={80} />
+          <Image src={withBasePath('/images/modal-logo-icon.png')} alt="JIPSI Icon" width={80} height={80} />
         </div>
         
         {/* === CONDITIONAL RENDERING: Show message OR form === */}

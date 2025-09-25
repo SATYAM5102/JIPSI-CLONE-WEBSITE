@@ -2,6 +2,7 @@ import styles from './Footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { withBasePath } from '../../utils/basePath';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
             <div className={styles.grid}>
             {/* Column 1: About & Working Hours */}
             <div className={styles.about}>
-                <Image src="/images/logo.svg" alt="JIPSI Logo" width={120} height={50} />
+                <Image src={withBasePath('/images/logo.svg')} alt="JIPSI Logo" width={120} height={50} />
                 <p>
                 India’s First Exclusive Sports & Musculoskeletal Radiology Institute that Encourages the Future of Sports in India through state-of-the-art facility and accomplished team of Internationally renowned doctors.
                 </p>

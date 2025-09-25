@@ -6,6 +6,7 @@ import DoctorsSection from '../components/DoctorsSection/DoctorsSection';
 import ServicesSection from '../components/ServicesSection/ServicesSection';
 import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection';
 import VideoGallerySection from '../components/VideoGallerySection/VideoGallerySection';
+import { withBasePath } from '../utils/basePath';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Head>
         <title>JIPSI - Play. Live. Painfree.</title>
         <meta name="description" content="India's First Exclusive Sports & Musculoskeletal Radiology Institute" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={withBasePath('/favicon.ico')} />
       </Head>
 
       <main>

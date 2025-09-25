@@ -1,5 +1,6 @@
 import styles from './WhyJipsiContent.module.css';
 import Image from 'next/image';
+import { withBasePath } from '../../utils/basePath';
 
 // Data for the sections
 const infoCards = [
@@ -10,16 +11,16 @@ const infoCards = [
 ];
 
 const services = [
-    { name: 'Microfragmented Adipose Tissue', icon: '/images/icons/service-adipose.png' },
-    { name: 'Bone Marrow Aspirate Concentrate', icon: '/images/icons/service-bone-marrow.png' },
-    { name: 'Sports Injury Management', icon: '/images/icons/service-sports-injury.png' },
-    { name: 'Regenerative Therapy', icon: '/images/icons/service-regenerative.png' },
-    { name: 'Joint & Musculoskeletal Imaging', icon: '/images/icons/service-imaging.png' },
-    { name: 'Post Operative Rehabilitation', icon: '/images/icons/service-rehab.png' },
-    { name: 'PRP Injections', icon: '/images/icons/service-prp.png' },
-    { name: 'International Expert Opinion', icon: '/images/icons/service-opinion.png' },
-    { name: 'Chronic Pain Management', icon: '/images/icons/service-pain.png' },
-    { name: 'Manual Therapy', icon: '/images/icons/service-manual.png' }
+    { name: 'Microfragmented Adipose Tissue', icon: withBasePath('/images/icons/service-adipose.png') },
+    { name: 'Bone Marrow Aspirate Concentrate', icon: withBasePath('/images/icons/service-bone-marrow.png') },
+    { name: 'Sports Injury Management', icon: withBasePath('/images/icons/service-sports-injury.png') },
+    { name: 'Regenerative Therapy', icon: withBasePath('/images/icons/service-regenerative.png') },
+    { name: 'Joint & Musculoskeletal Imaging', icon: withBasePath('/images/icons/service-imaging.png') },
+    { name: 'Post Operative Rehabilitation', icon: withBasePath('/images/icons/service-rehab.png') },
+    { name: 'PRP Injections', icon: withBasePath('/images/icons/service-prp.png') },
+    { name: 'International Expert Opinion', icon: withBasePath('/images/icons/service-opinion.png') },
+    { name: 'Chronic Pain Management', icon: withBasePath('/images/icons/service-pain.png') },
+    { name: 'Manual Therapy', icon: withBasePath('/images/icons/service-manual.png') }
 ];
 
 const WhyJipsiContent = () => {
@@ -75,7 +76,7 @@ Choose JIPSI for comprehensive, expert care that helps you recover faster and st
           <h2 className={styles.title}>Celebrity Collage</h2>
           <div className={styles.imageCollage}>
             {/* Use your collage image here */}
-            <Image src="/images/celebrity-collage.jpg" alt="Celebrity Collage" width={1600} height={900} style={{width: '100%', height: 'auto'}} />
+            <Image src={withBasePath('/images/celebrity-collage.jpg')} alt="Celebrity Collage" width={1600} height={900} style={{width: '100%', height: 'auto'}} />
           </div>
         </div>
       </section>

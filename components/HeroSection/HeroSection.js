@@ -1,5 +1,6 @@
 import styles from './HeroSection.module.css';
 import Image from 'next/image';
+import { withBasePath } from '../../utils/basePath';
 
 const HeroSection = () => {
   return (
@@ -8,7 +9,7 @@ const HeroSection = () => {
         {/* Desktop Image */}
         <div className={styles.desktopImage}>
           <Image
-            src="/images/hero-background.jpg"
+            src={withBasePath('/images/hero-background.jpg')}
             alt="Doctors reviewing medical scans"
             fill
             style={{ objectFit: 'cover' }}
@@ -20,7 +21,7 @@ const HeroSection = () => {
         {/* Mobile Image - NEW */}
         <div className={styles.mobileImage}>
           <Image
-            src="/images/hero-background-mobile.jpg" // The new mobile-specific image
+            src={withBasePath('/images/hero-background-mobile.jpg')} // The new mobile-specific image
             alt="Doctors reviewing medical scans"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center top' }} // Focus on the top part

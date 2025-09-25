@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { withBasePath } from '../../utils/basePath';
 
 // NEW: A nested data structure for our navigation links
 const navLinksData = [
@@ -95,15 +96,15 @@ const Header = () => {
             {/* NEW: Inner container for alignment */}
           <div className={`container ${styles.navContainer}`}>
             <div className={styles.logoContainer}>
-                <Link href="/">
-                <Image src="/images/logo.svg" alt="JIPSI Logo" width={120} height={50} priority />
+                <Link href={withBasePath('/')}> 
+                <Image src={withBasePath('/images/logo.svg')} alt="JIPSI Logo" width={120} height={50} priority />
                 </Link>
             </div>
 
             <div className={styles.desktopNavLinks}>
                 {navLinksData.map((item) => (
                 <div key={item.title} className={styles.navItem}>
-                    <Link href={item.href || '#'} className={styles.navLink}>
+                    <Link href={item.href ? withBasePath(item.href) : '#'} className={styles.navLink}>
                     {item.title}
                     {item.children && <FaChevronDown className={styles.chevron} />}
                     </Link>
@@ -111,11 +112,11 @@ const Header = () => {
                     <ul className={styles.dropdown}>
                         {item.children.map((child) => (
                         <li key={child.title} className={child.subChildren ? styles.hasSubMenu : ''}>
-                            <Link href={child.href}>{child.title}</Link>
+                            <Link href={child.href === '#' ? '#' : withBasePath(child.href)}>{child.title}</Link>
                             {child.subChildren && (
                             <ul className={styles.subMenu}>
                                 {child.subChildren.map((subChild) => (
-                                <li key={subChild.title}><Link href={subChild.href}>{subChild.title}</Link></li>
+                                <li key={subChild.title}><Link href={subChild.href === '#' ? '#' : withBasePath(subChild.href)}>{subChild.title}</Link></li>
                                 ))}
                             </ul>
                             )}
@@ -154,13 +155,13 @@ const Header = () => {
                   {openSubMenu === item.title && (
                     <ul className={styles.subMenu}>
                       {item.children.map((child) => (
-                        <li key={child.title}><Link href={child.href} onClick={toggleMenu}>{child.title}</Link></li>
+                        <li key={child.title}><Link href={child.href === '#' ? '#' : withBasePath(child.href)} onClick={toggleMenu}>{child.title}</Link></li>
                       ))}
                     </ul>
                   )}
                 </>
               ) : (
-                <Link href={item.href} onClick={toggleMenu}>{item.title}</Link>
+                <Link href={item.href === '#' ? '#' : withBasePath(item.href)} onClick={toggleMenu}>{item.title}</Link>
               )}
             </li>
           ))}

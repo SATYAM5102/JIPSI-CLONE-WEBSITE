@@ -1,5 +1,6 @@
 import styles from './VisionMissionContent.module.css';
 import Image from 'next/image';
+import { withBasePath } from '../../utils/basePath';
 
 const VisionMissionContent = () => {
   return (
@@ -7,7 +8,7 @@ const VisionMissionContent = () => {
       <div className="container">
         <div className={styles.imageContainer}>
           <Image 
-            src="/images/vision-main-photo.jpg" // Add the main page image here
+            src={withBasePath('/images/vision-main-photo.jpg')} // Add the main page image here
             alt="Dr. Prableen Kaur and Dr. Gaurav Kant Sharma"
             width={1100} // Base width
             height={600} // Base height
