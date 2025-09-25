@@ -1,0 +1,121 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fix for Tablet View */
+/* @media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding-top: 120px;
+  }
+}
+
+/* UPDATED fix for Mobile View */
+/* @media (max-width: 768px) {
+  main {
+    /* Use our new calculated value */
+    /* padding-top: 90px;
+  }
+} */
+
+.container {
+  max-width: 1200px;  /* The maximum width of our content area */
+  width: 100%;       /* Ensures it's responsive */
+  margin-left: auto; /* Centers the container */
+  margin-right: auto;
+  padding-left: 30px; /* Consistent horizontal spacing */
+  padding-right: 30px;
+  text-align: center;
+}
+
+/* On mobile, we can reduce the padding slightly */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0b105a;
+  text-align: center;
+}
+
+.section-description {
+  /* UPDATED: Increased font size */
+  font-size: 1.2rem; 
+  color: #3d3b3b;
+  /* UPDATED: Constrained width to create side padding */
+  max-width: 1500px; 
+  margin: 0 auto 50px auto; /* Increased bottom margin */
+  line-height: 1.8; /* Increased line height for readability */
+  text-align: center; /* Justified text for a cleaner look */
+}
+
+/* Responsive adjustments for these global classes */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+}
+
+main > *:first-child {
+  margin-top: 125px; /* Adjust this value if needed */
+}
+
+
+/* On mobile, we use a smaller margin to match the smaller header */
+@media (max-width: 768px) {
+  main > *:first-child {
+    margin-top: 90px; /* Adjust this value if needed */
+  }
+}
+
+/* 
+  IMPORTANT: On the homepage, we want the hero to slide UNDER the header,
+  so we must explicitly remove this margin for the homepage hero section.
+*/
+main > .hero {
+  margin-top: 0 !important;
+}
+
+/* NEW: A wider container for specific full-width sections like videos */
+.container-wide {
+  max-width: 1400px; /* Wider than the standard 1200px */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .container-wide {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* UPDATED: Use the ID for a more specific exception */
+main > #homepageHero {
+  margin-top: 0 !important;
+}

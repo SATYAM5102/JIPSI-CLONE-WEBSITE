@@ -1,0 +1,142 @@
+/* Main Content Section */
+.mainContentSection {
+  padding: 80px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0b105a;
+  margin-bottom: 40px;
+}
+
+.textBlock {
+  margin-bottom: 50px;
+}
+
+.textBlock p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.textBlock strong {
+  font-weight: 600;
+  color: #000;
+}
+
+/* --- UPDATED: Info Cards Grid --- */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.infoCard {
+  padding: 30px;
+  border-radius: 10px; /* Slightly more rounded */
+  transition: transform 0.3s ease;
+  min-height: 320px; /* Give the cards a consistent minimum height */
+  display: flex; /* Use flexbox to align content */
+  flex-direction: column;
+}
+
+.infoCard:hover {
+  transform: scale(1.05);
+}
+
+/* Dark cards */
+.infoCard:nth-child(1), .infoCard:nth-child(3) {
+  background-color: #301981;
+}
+
+/* Light cards */
+.infoCard:nth-child(2), .infoCard:nth-child(4) {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+}
+
+.infoCard h4 {
+  font-size: 1.2rem; /* Slightly smaller title */
+  font-weight: 600; /* Bolder */
+  margin: 0 0 20px 0; /* More space below the title */
+}
+
+.infoCard p {
+  font-size: 0.95rem; /* Slightly smaller paragraph text */
+  line-height: 1.7; /* Increased line height */
+}
+
+/* --- Specific color styles for text --- */
+.infoCard:nth-child(1) h4, 
+.infoCard:nth-child(1) p, 
+.infoCard:nth-child(3) h4, 
+.infoCard:nth-child(3) p {
+  color: white; /* White text for dark cards */
+}
+
+.infoCard:nth-child(2) h4, 
+.infoCard:nth-child(2) p, 
+.infoCard:nth-child(4) h4, 
+.infoCard:nth-child(4) p {
+  color: #333; /* Dark text for light cards */
+}
+
+/* What We Do Best Section */
+.weDoBestSection {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+/* NEW: Style for the icon container */
+.serviceIcon {
+  margin: 0 auto 15px auto; /* Center the icon and add space below */
+  color: #f37021; /* This will be the color for icon fonts, but good to have */
+}
+
+.serviceItem {
+  font-weight: 500;
+  display: flex; /* Use flexbox for better alignment */
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceItem {
+  font-weight: 500;
+}
+
+/* Collage Section */
+.collageSection {
+  padding: 80px 0;
+}
+
+.imageCollage {
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  .infoGrid, .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}

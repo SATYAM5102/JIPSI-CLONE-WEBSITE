@@ -1,0 +1,79 @@
+/* components/TestimonialsSection/TestimonialsSection.module.css */
+
+.testimonialsSection {
+  padding: 60px 0;
+  background-color: #f9f9f9; /* Light grey background */
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+.sliderContainer {
+  padding: 0 20px; /* Add some padding so cards don't touch the edges */
+}
+
+/* Style for each card in the slider */
+.testimonialCard {
+  padding: 15px; /* This padding is outside the card content, creating the gap */
+}
+
+.cardContent {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: left;
+  height: 300px; /* Give cards a fixed height */
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  margin-bottom: 15px;
+}
+
+.testimonialText {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+  flex-grow: 1; /* Allows this element to take up available space */
+}
+
+.patientName {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: auto; /* Pushes the name to the bottom */
+}
+
+/* --- Customizing the carousel dots --- */
+
+/* UPDATED: Added .sliderContainer before :global */
+.sliderContainer :global(.slick-dots li button:before) {
+  font-size: 12px;
+  color: #301981 !important; /* Use our new brand color */
+}
+
+/* UPDATED: Added .sliderContainer before :global */
+.sliderContainer :global(.slick-dots li.slick-active button:before) {
+  opacity: 1;
+  color: #f37021 !important; /* Use our orange brand color for the active dot */
+}

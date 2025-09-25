@@ -1,0 +1,87 @@
+.teamSection {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.category {
+  margin-bottom: 60px;
+}
+
+/* NEW: Wrapper to control the grid's max width and center it */
+.gridWrapper {
+  max-width: 1000px; /* Constrain the width to make cards smaller */
+  margin: 0 auto; /* Center the wrapper */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; /* UPDATED: Reduced the gap */
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.imageWrapper {
+  width: 100%;
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cardContent {
+  padding: 25px;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.2rem; /* UPDATED: Slightly smaller font */
+  font-weight: 600;
+  color: #0b105a;
+  margin: 0 0 15px 0;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f37021;
+  background-color: #fff;
+  border: 1px solid #f37021;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+  background-color: #f37021;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,91 @@
+.contactSection {
+  padding: 80px 0;
+}
+
+.grid {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+}
+
+/* --- Form Container --- */
+.formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  color: #0b105a;
+  margin-bottom: 30px;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.formContainer input,
+.formContainer select,
+.formContainer textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #f9f9f9;
+}
+
+.formContainer textarea {
+  flex-grow: 1;
+}
+
+.captcha {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow captcha to wrap on small screens */
+}
+
+.submitButton {
+  background-color: #5842c3;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #433199;
+}
+
+/* --- Map Container --- */
+.mapContainer {
+  flex: 1.2;
+  min-height: 600px;
+}
+
+/* 
+  =======================================================
+  === RESTORED & CORRECTED RESPONSIVE STYLES ===
+  =======================================================
+*/
+@media (max-width: 900px) {
+  .grid {
+    /* This is the key fix: it stacks the form and map vertically */
+    flex-direction: column; 
+  }
+  .mapContainer {
+    /* Give the map a sensible height when it's stacked */
+    height: 400px; 
+    min-height: auto; /* Remove the large min-height */
+  }
+}

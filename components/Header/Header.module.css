@@ -1,0 +1,292 @@
+/* --- Desktop Styles (Mostly Unchanged) --- */
+.header {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  z-index: 1000; 
+  transition: all 0.4s ease-in-out;
+}
+.header.scrolled .mainNav {
+  padding-top: 5px; 
+  padding-bottom: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .topBar {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden; /* This is crucial to hide the content */
+}
+
+.topBar {
+    background-color: #f37021;
+    color: white; 
+    text-align: center; 
+    padding: 8px 0; 
+    font-size: 14px; 
+    /* height: 35px; An approximate initial height */
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+.mainNav {
+  background-color: #0b105a; color: white; display: flex; justify-content: space-between; align-items: center; padding: 30px 0; transition: padding 0.4s ease-in-out; position: relative;
+}
+.logoContainer a { display: flex; align-items: center; }
+.desktopNavLinks { display: flex; align-items: center; gap: 25px; }
+.desktopNavLinks a { color: white; text-decoration: none; font-size: 16px; padding: 5px 0; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; }
+/* .desktopNavLinks a:hover { border-bottom-color: white; } */
+.hamburger { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+/* NEW: Style the inner container to align its items */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Wrapper for each top-level navigation item */
+.navItem {
+  position: relative; /* This is the anchor for the dropdown */
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between text and chevron */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.chevron {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* The dropdown menu itself (hidden by default) */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 220px;
+  z-index: 10;
+  margin-top: 0; 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/* Show the dropdown on hover */
+.navItem:hover .dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown li a {
+  color: #333;
+  padding: 12px 20px;
+  display: block;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* --- Styles for the nested sub-menu --- */
+.hasSubMenu {
+  position: relative; /* Anchor for the sub-menu */
+}
+
+/* The sub-menu is also hidden by default */
+.subMenu {
+  display: block;
+  position: absolute;
+  top: -10px; /* Align with parent item */
+  left: 100%; /* Position to the right */
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/* Show the sub-menu on hover of its parent */
+.hasSubMenu:hover .subMenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Add an arrow to indicate a sub-menu */
+.hasSubMenu > a::after {
+  content: '→';
+  float: right;
+  margin-left: 15px;
+}
+
+/* --- NEW: Mobile Sidebar & Overlay Styles --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001; /* Above content, below sidebar */
+}
+
+.mobileMenuSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #343a40; /* Dark charcoal color from screenshot */
+  z-index: 1002; /* On top of everything */
+  padding: 20px;
+  transform: translateX(-100%); /* Hidden off-screen by default */
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenuSidebar.menuOpen {
+  transform: translateX(0); /* Slides into view */
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.mobileMenuSidebar ul {
+  list-style: none;
+  padding: 60px 0 0 0; /* Pushed down from the top */
+  margin: 0;
+}
+
+.mobileMenuSidebar li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuSidebar li a, .accordionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 18px 10px;
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.subMenu {
+  padding: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.subMenu li {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subMenu li a {
+  padding-left: 30px; /* Indent sub-menu items */
+  color: #333;
+  background-color: white;
+}
+
+.subMenu li a:hover {
+  background-color: #f1f1f1;
+}
+
+.mobileMenuSidebar .subMenu {
+  /* This more specific rule overrides the desktop styles */
+  position: static; /* It's not a popup, it's an inline list */
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  
+  /* Styling to make it look like an indented accordion */
+  padding: 0;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.mobileMenuSidebar .subMenu li {
+  border-bottom: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuSidebar .subMenu li a {
+  padding-left: 30px; /* Indent sub-menu items */
+}
+
+/* --- Tablet Media Query --- */
+@media (max-width: 1024px) {
+  .desktopNavLinks { display: none; }
+  .hamburger { display: block; }
+}
+
+/* 
+  =======================================================
+  === NEW & CORRECTED MOBILE STYLES (768px and below) ===
+  =======================================================
+*/
+@media (max-width: 768px) {
+  .header {
+    /* We keep it fixed, but remove the scroll transition logic by setting a fixed height */
+    position: fixed;
+  }
+
+  .topBar {
+    /* Make the top bar more compact */
+    padding: 5px 0;
+    font-size: 12px;
+  }
+  
+  .mainNav {
+    /* Force the nav bar into its smaller, final state */
+    padding: 10px 5%;
+  }
+
+  /* This rule prevents the scroll transition from happening on mobile */
+  .header.scrolled .mainNav {
+    padding: 10px 5%;
+    box-shadow: none; /* No need for a shadow if it doesn't move */
+  }
+}

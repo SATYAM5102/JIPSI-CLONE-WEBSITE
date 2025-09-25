@@ -1,0 +1,58 @@
+.bioSection {
+  padding: 80px 0;
+}
+
+/* NEW: The clearfix is essential to make sure this container wraps the floated image */
+.bioContainer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* UPDATED: Style for the image container to float it */
+.imageContainer {
+  float: right; /* Float the image to the right */
+  width: 35%; /* Give it a percentage-based width */
+  margin-left: 40px; /* Space between text and image */
+  margin-bottom: 20px; /* Space below the image */
+}
+
+/* UPDATED: The text container will now naturally wrap around the floated image */
+.textContainer {
+  /* No special layout properties needed here */
+}
+
+.textContainer p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.textContainer strong {
+  font-weight: 600;
+  display: block;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0b105a;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* --- UPDATED RESPONSIVE STYLES --- */
+@media (max-width: 900px) {
+  /* On smaller screens, we remove the float */
+  .imageContainer {
+    float: none;
+    width: 100%; /* Make the image full-width */
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+}

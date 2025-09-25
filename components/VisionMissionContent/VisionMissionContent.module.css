@@ -1,0 +1,41 @@
+.contentSection {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.imageContainer {
+  margin-bottom: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.visionBlock {
+  margin-bottom: 60px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0b105a;
+  margin-bottom: 30px;
+}
+
+.visionBlock p,
+.missionBlock p {
+  font-size: 1.1rem;
+  color: #000;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* The expected smaller title on mobile */
+  }
+
+  .contentSection {
+    padding: 60px 0;
+  }
+}

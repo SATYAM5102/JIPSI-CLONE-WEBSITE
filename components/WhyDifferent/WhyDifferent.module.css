@@ -1,0 +1,52 @@
+.whyDifferentSection {
+  padding: 80px 0;
+  background-color: #f9f9f9; /* Light grey background */
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0b105a;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  /* Create 3 columns on desktop, then 2 on tablet, then 1 on mobile */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+}
+
+.featureCard {
+  text-align: center;
+}
+
+.iconWrapper {
+  margin: 0 auto 20px auto;
+}
+
+.featureCard p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Added Responsive adjustment for Title --- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Reduce font size from 2.5rem */
+  }
+}

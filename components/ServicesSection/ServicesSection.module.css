@@ -1,0 +1,80 @@
+/* First, define the scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* We move it 50% because our list is duplicated. This creates a perfect loop. */
+    transform: translateX(-50%);
+  }
+}
+
+.servicesSection {
+  padding: 60px 0; /* Changed padding to 0 on the sides */
+  background-color: #ffffff;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+  text-align: justify; /* Justify the text as requested */
+  padding: 0 20px; /* Add padding here so it doesn't touch the edges */
+}
+
+/* This is the container that will hide the overflow */
+.servicesContainer {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.servicesGrid {
+  display: flex; /* Make it a flex container to align items in a row */
+  width: max-content; /* Ensure the grid is wide enough to hold all items */
+  /* Animation properties */
+  animation: scroll 30s linear infinite; /* Adjust 30s to make it faster or slower */
+}
+
+/* Pause the animation on hover for better user experience */
+.servicesContainer:hover .servicesGrid {
+  animation-play-state: paused;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px; /* Add space between cards */
+}
+
+.iconWrapper {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Your hover animation */
+}
+
+.serviceCard:hover .iconWrapper {
+  transform: scale(1.1); /* Your hover animation */
+}
+
+.serviceName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  white-space: nowrap; /* Prevent names from wrapping to a new line */
+}

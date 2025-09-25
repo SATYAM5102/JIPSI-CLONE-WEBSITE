@@ -1,0 +1,69 @@
+.pageWrapper { /* For register page */
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+.fullFormCard { /* For register page */
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #0b105a;
+  margin-bottom: 30px;
+}
+.inputGroup {
+  margin-bottom: 20px;
+}
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.inputGroup input,
+.fullFormCard input,
+.fullFormCard select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.fullFormCard form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.submitButton {
+  width: 100%;
+  background-color: #301981;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+.submitButton:hover {
+  background-color: #2d0b5a;
+}
+.links {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+}
+.links a {
+  color: #301981;
+  text-decoration: underline;
+}
+.captcha {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

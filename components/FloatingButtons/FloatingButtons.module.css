@@ -1,0 +1,88 @@
+/* This new wrapper is the key to the fix. It's a full-width, fixed container. */
+.wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between; /* Pushes children to opposite ends */
+  align-items: flex-end; /* Aligns children to the bottom edge, ensuring they are level */
+  pointer-events: none; /* Allows clicks to go "through" the empty parts of the wrapper */
+}
+
+/* We must make the direct children clickable again */
+.wrapper > * {
+  pointer-events: auto;
+}
+
+/* Social icons no longer need their own position styling */
+.socialIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.socialIcons a:nth-child(1) { 
+  background-color: #007bff;
+}
+
+.socialIcons a:nth-child(2) { 
+  background-color: #25D366;
+  border-radius: 10px;
+}
+
+/* The contact button also no longer needs its own positioning */
+.contactButton {
+  background-color: #f37021;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.contactButton:hover {
+  background-color: #e06014;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  .socialIcons {
+    gap: 10px;
+  }
+  .icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  .contactButton {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}

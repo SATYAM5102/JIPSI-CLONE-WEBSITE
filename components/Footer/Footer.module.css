@@ -1,0 +1,117 @@
+.footer {
+  background-color: #0b105a;
+  color: #a9a9a9;
+  padding: 60px 0;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+.grid {
+  display: grid;
+  /* UPDATED: A 3-column grid. The first column takes up 2 fractions of space. */
+  grid-template-columns: 2fr 1fr 1fr; 
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about p {
+  margin: 20px 0;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about {
+    text-align: left;
+}
+
+.contact {
+    text-align: justify;
+}
+
+.contact p, .hours p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+  text-align: justify; /* Add this line */
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px; /* Add space below icons */
+}
+
+.socialIcons a {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: #f37021;
+}
+
+/* Common style for all headings */
+.links h4, .contact h4, .hours h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: bold; /* Make headings bold */
+  text-align: left;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+}
+
+.links ul li {
+  margin-bottom: 10px;
+}
+
+.links ul li a {
+  color: #a9a9a9;
+  transition: color 0.3s ease;
+}
+
+.links ul li a:hover {
+  color: #f37021;
+}
+
+.contact p, .hours p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments for tablets and smaller */
+@media (max-width: 900px) {
+  .grid {
+    /* Stack to 2 columns on medium screens */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 600px) {
+  .grid {
+    /* Stack to a single column on small screens */
+    grid-template-columns: 1fr;
+  }
+}

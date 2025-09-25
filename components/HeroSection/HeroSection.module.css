@@ -1,0 +1,102 @@
+/* components/HeroSection/HeroSection.module.css */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.heroImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* --- NEW: Image visibility rules --- */
+.mobileImage {
+  display: none; /* Hidden by default */
+}
+.desktopImage {
+  display: block; /* Visible by default */
+}
+
+.heroImageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  /* CHANGED: Align items to the top of the container */
+  justify-content: flex-start; 
+  align-items: center;
+  flex-direction: column;
+  /* CHANGED: This padding pushes the content down to just below the header's initial height */
+  padding-top: 0; 
+  text-align: center;
+}
+
+.textContainer {
+  /* UPDATED: Increased max-width to allow text to fit on one line */
+  max-width: 1000px; 
+  /* UPDATED: Background is now more transparent */
+  background-color: rgba(0, 52, 130, 0.7); 
+  padding: 10px 10px;
+  /* UPDATED: Border is now transparent, effectively removing it */
+  border: 1px solid transparent; 
+  height: fit-content;
+}
+
+.textContainer h1 {
+  margin: 0;
+  /* UPDATED: Font size is decreased further */
+  font-size: 1.5rem; 
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  /* This prevents the text from wrapping to a new line */
+  white-space: nowrap;
+  padding-top: 2%;
+  padding-right: 10px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .hero {
+    /* ADD THIS LINE to make the hero slightly shorter on tablets */
+    height: 90vh;
+  }
+  .textContainer h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* --- UPDATED: All mobile responsive rules --- */
+  .hero {
+    height: 40vh;
+  }
+
+  .textContainer {
+    display: none;
+  }
+
+  /* NEW: Swap image visibility on mobile */
+  .mobileImage {
+    display: block;
+  }
+  .desktopImage {
+    display: none;
+  }
+}

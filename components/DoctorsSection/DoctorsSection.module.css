@@ -1,0 +1,93 @@
+.doctorsSection {
+  /* UPDATED: Wider padding to match testimonials */
+  padding: 60px 0; 
+  background-color: #f9f9f9;
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0b105a;
+}
+
+.description {
+  /* UPDATED: Increased font size */
+  font-size: 1.3rem; 
+  color: #3d3b3b;
+  /* UPDATED: Constrained width to create side padding */
+  max-width: 1500px; 
+  margin: 0 auto 50px auto; /* Increased bottom margin */
+  line-height: 1.8; /* Increased line height for readability */
+  text-align: center; /* Justified text for a cleaner look */
+}
+
+.doctorsGrid {
+  display: flex;
+  justify-content: center;
+  /* UPDATED: Increased gap between cards */
+  gap: 80px; 
+  flex-wrap: wrap;
+}
+
+.doctorCard {
+  text-align: center;
+}
+
+.imageWrapper {
+  /* border-radius: 50%; */
+  overflow: hidden;
+  /* UPDATED: Larger dimensions to match the JSX */
+  width: 300px; 
+  /* height: 300px; */
+  height: auto;
+  margin: 0 auto 25px auto; /* Increased bottom margin */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.doctorName {
+  /* UPDATED: Larger and bolder font */
+  font-size: 1.3rem; 
+  font-weight: 600;
+  color: #0b105a;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .description {
+    font-size: 1rem; /* Smaller description text */
+    line-height: 1.6; /* Tighter line spacing */
+    margin-bottom: 40px; /* Less space below */
+    text-align: justify;
+  }
+
+  .doctorsGrid {
+    gap: 20px; /* Reduced gap between the doctor cards */
+  }
+
+  .doctorCard {
+    /* To fit two cards side-by-side, we calculate the width.
+       100% width minus the gap (20px) divided by 2.
+       calc(50% - 10px) ensures they fit perfectly. */
+    width: calc(50% - 10px);
+  }
+
+  .imageWrapper {
+    /* Make the images responsive to the new card width */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .doctorName {
+    font-size: 0.9rem; /* Smaller name text */
+  }
+}

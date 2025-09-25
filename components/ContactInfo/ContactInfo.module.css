@@ -1,0 +1,66 @@
+.infoSection {
+  padding-bottom: 80px;
+  background-color: #ffffff; /* Ensure a clean white background */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #ebebeb;
+  padding: 40px 30px; /* Adjusted padding */
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative; /* Needed for the hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+  height: 450px;
+}
+
+/* --- THE HOVER ANIMATION --- */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Add a more pronounced shadow */
+}
+
+
+/* --- NEW: Icon Wrapper Styles --- */
+.iconWrapper {
+  margin: 0 auto 20px auto; /* Center the icon and add space below */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Make it a circle */
+  background-color: #ebebeb; /* White background for the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 4px 15px rgba(0,0,0,0.08); */
+  margin-top: 10%;
+}
+
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #0b105a;
+  margin: 30px 0;
+  font-weight: 500; /* Bolder heading */
+  text-align: left;
+}
+
+.card p {
+  color: #666;
+  line-height: 2; /* Increased line height */
+  margin: 0; /* Remove default paragraph margins */
+  text-align: justify;
+
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack to a single column */
+  }
+}

@@ -1,0 +1,133 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background: white;
+  /* UPDATED: Increased top padding to make space for the overlapping logo */
+  padding: 60px 40px 40px 40px; 
+  border-radius: 0;
+  width: 80%;
+  max-width: 450px;
+  text-align: center;
+  /* UPDATED: This is crucial. It becomes the positioning anchor for the logo. */
+  position: relative; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #1b1a1a;
+  cursor: pointer;
+}
+
+.logoContainer {
+  /* --- THIS IS THE KEY TECHNIQUE --- */
+  position: relative;
+  top: 0; /* Align to the top of the .modalContent */
+  left: 50%; /* Align to the horizontal center of the .modalContent */
+  transform: translate(-50%, -50%); /* Pull it left by 50% of its OWN width and UP by 50% of its OWN height */
+  /* --- END TECHNIQUE --- */
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1c064e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.title {
+  color: #0b105a; 
+  font-size: 2.5rem;
+  font-weight: 450;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: Poppins, sans-serif;
+}
+
+.subtitle {
+  color: #1b1a1a;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-family: Poppins, sans-serif;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.subtitle strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  text-align: left;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.submitButton {
+  background-color: #176fb8; 
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: #3a0066;
+}
+
+.thankYouMessage {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.thankYouMessage h2 {
+  color: #4b0082; /* Use the same color as the title */
+  font-size: 1.8rem;
+  font-weight: 700;
+}
