@@ -18,30 +18,26 @@ const VideoGallerySection = () => {
   }, []);
 
   const settings = {
-    dots: false, // You can enable these if you want
+    dots: false,
     infinite: true,
     speed: 500,
+    cssEase: 'ease-in-out',
     slidesToShow: 3,
     slidesToScroll: 1,
+    swipe: true,
+    swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3500,
+    arrows: false,
     responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 992,  settings: { slidesToShow: 2 } },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '8%',
         }
       }
     ]

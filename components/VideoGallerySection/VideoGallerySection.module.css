@@ -5,9 +5,16 @@
 .sliderContainer {
   opacity: 0;
   transition: opacity 0.5s;
+  overflow: hidden; /* prevent horizontal overflow on mobile */
 }
 .sliderContainer.sliderReady {
   opacity: 1;
+}
+
+/* Track as flex to ensure slide equal heights and spacing */
+.sliderContainer :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
 }
 
 .videoCard {
@@ -21,6 +28,8 @@
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   background-color: #000;
+  height: 332px;
+  width: 332px;
 }
 
 .playerWrapper iframe {
@@ -29,4 +38,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Ensure single-column slides and contain overflow on small screens */
+@media (max-width: 768px) {
+  .sliderContainer :global(.slick-slide) {
+    width: 100% !important;
+  }
+  .videoCard {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

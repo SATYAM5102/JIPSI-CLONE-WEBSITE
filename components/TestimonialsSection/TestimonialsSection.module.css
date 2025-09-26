@@ -1,8 +1,4 @@
-/*
-  =======================================================
-  ===   DEFINITIVE & CLEANED CSS FOR TESTIMONIALS (V2)  ===
-  =======================================================
-*/
+
 
 /* --- Section Wrapper --- */
 .testimonialsSection {
@@ -17,6 +13,26 @@
 }
 .sliderContainer.sliderReady {
   opacity: 1;
+}
+
+/* Track as flex to avoid squished slides and ensure equal height */
+.sliderContainer :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ensure single-column slides on small screens even if JS breakpoints misfire */
+@media (max-width: 768px) {
+  .sliderContainer :global(.slick-slide) {
+    width: 85% !important; /* show 85% width with centerMode */
+  }
+  .testimonialCard {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cardContent {
+    padding: 20px;
+  }
 }
 
 /* --- KEY FIX PART 1: Force Equal Height for all slides in a row --- */
@@ -46,11 +62,11 @@
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  text-align: left;
+  text-align:left;
   
   /* Flexbox layout for the inner content */
-  width: 100%; /* Ensure it takes full width of the card */
-  height: 100%;
+  width: 300px; /* Ensure it takes full width of the card */
+  height: 332px;
   display: flex;
   flex-direction: column;
 }
@@ -74,7 +90,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: #333;
-  margin-top: 20px; 
+  margin-bottom: 30px; 
 }
 
 /* --- Carousel Dot Styles (inactive) --- */

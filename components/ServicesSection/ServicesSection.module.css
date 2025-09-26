@@ -18,6 +18,12 @@
   opacity: 1;
 }
 
+/* Make slick-track flex so slides stretch equally */
+.sliderContainer :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
 /* --- Individual Slide/Card --- */
 .serviceCard {
   text-align: center;
@@ -50,5 +56,14 @@
 @media (max-width: 768px) {
   .serviceCard {
     height: auto;
+  }
+  /* Force one item per row on mobile regardless of JS */
+  .sliderContainer :global(.slick-slide) {
+    width: 100% !important;
+  }
+  /* Avoid side gutters causing overflow */
+  .serviceCard {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

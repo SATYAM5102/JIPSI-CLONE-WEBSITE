@@ -35,15 +35,21 @@ const TestimonialsSection = () => {
     setHasMounted(true);
   }, []);
 
-  // Restored the improved responsive settings
+  // Unified slider behavior: smooth autoplay, swipe, 1-up on mobile (85% width)
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
+    cssEase: 'ease-in-out',
     slidesToShow: 3,
     slidesToScroll: 1,
+    swipe: true,
+    swipeToSlide: true,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -61,6 +67,8 @@ const TestimonialsSection = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '7.5%', // 85% visible card for readability
         }
       }
     ]

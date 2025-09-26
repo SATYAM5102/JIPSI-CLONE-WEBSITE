@@ -25,46 +25,34 @@ const ServicesSection = () => {
 
   const settings = {
     dots: false,
-    infinite: true, // This creates the seamless loop
-    speed: 500, // Standard transition speed
+    infinite: true,
+    speed: 500,
+    cssEase: 'ease-in-out',
     slidesToScroll: 1,
+    swipe: true,
+    swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 2500, // A normal, consistent speed
+    autoplaySpeed: 2500,
     arrows: false,
-    
-    // Default setting for Desktops
     slidesToShow: 5,
-
-    // Detailed breakpoints for all screen sizes
     responsive: [
+      { breakpoint: 1400, settings: { slidesToShow: 5 } },
+      { breakpoint: 1200, settings: { slidesToShow: 4 } },
+      { breakpoint: 992,  settings: { slidesToShow: 3 } },
       {
-        breakpoint: 1400, // Large screens
-        settings: {
-          slidesToShow: 5,
-        }
-      },
-      {
-        breakpoint: 1200, // Standard laptops
-        settings: {
-          slidesToShow: 4,
-        }
-      },
-      {
-        breakpoint: 992, // Tablets (Landscape)
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 768, // Tablets (Portrait)
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '8%',
         }
       },
       {
-        breakpoint: 576, // Mobile phones
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '8%',
         }
       }
     ]
