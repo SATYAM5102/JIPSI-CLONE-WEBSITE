@@ -42,15 +42,15 @@ const navLinksData = [
   { 
     title: 'Gallery',
     children: [
-      { title: 'Image', href: '#' },
-      { title: 'Video', href: '#' },
+      { title: 'Image', href: '/gallery/image' },
+      { title: 'Video', href: '/gallery/video' },
     ]
   },
   { title: 'Blog', href: '#' },
   { 
     title: 'Education',
     children: [
-      { title: 'Our Workshop/Fellowship', href: '#' },
+      { title: 'Our Workshop/Fellowship', href: '/fellowship' },
       { title: 'Online Courses', href: '#' },
       { title: 'Free Education Videos', href: '#' },
     ]

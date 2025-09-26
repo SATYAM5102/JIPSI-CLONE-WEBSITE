@@ -50,3 +50,9 @@
     font-size: 2rem; /* Reduce font size from 2.5rem */
   }
 }
+
+@media (max-width: 768px) {
+  .programBlock {
+    grid-template-columns: 1fr;
+  }
+}

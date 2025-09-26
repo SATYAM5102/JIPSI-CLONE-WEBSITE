@@ -1,6 +1,13 @@
 .videoGallerySection {
   padding: 60px 0;
-  background-color: #ffffff;
+}
+
+.sliderContainer {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.sliderContainer.sliderReady {
+  opacity: 1;
 }
 
 .videoCard {
@@ -12,41 +19,14 @@
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background-color: #000; /* Black background for loading */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background-color: #000;
 }
 
-.reactPlayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* --- NEW STYLES FOR CUSTOM THUMBNAIL --- */
-.thumbnailWrapper {
+.playerWrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
-}
-
-.playIconOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.thumbnailWrapper:hover .playIconOverlay {
-  opacity: 1;
 }

@@ -1,8 +1,9 @@
+import { useState, useEffect } from 'react'; // Restored necessary imports
 import styles from './TestimonialsSection.module.css';
-import Slider from 'react-slick'; // Import the Slider component
-import { FaStar } from 'react-icons/fa'; // We'll use this for the star ratings
+import Slider from 'react-slick';
+import { FaStar } from 'react-icons/fa';
 
-// Testimonial data
+// Restored the complete data array
 const testimonials = [
   {
     name: "Shakha Agrawal",
@@ -27,24 +28,37 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  // Settings for the carousel
+  // Restored the hasMounted state for robust client-side rendering
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // Restored the improved responsive settings
   const settings = {
-    dots: false, // Show navigation dots
-    infinite: true, // Loop the carousel
-    speed: 1000, // Transition speed in ms
-    slidesToShow: 3, // Show 3 testimonials at a time on desktop
-    slidesToScroll: 1, // Scroll 1 testimonial at a time
-    autoplay: true, // Automatically scroll
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [ // Responsive settings for different screen sizes
+    responsive: [
       {
-        breakpoint: 1024, // For tablets
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 992,
         settings: {
           slidesToShow: 2,
         }
       },
       {
-        breakpoint: 600, // For mobile phones
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
         }
@@ -54,30 +68,32 @@ const TestimonialsSection = () => {
 
   return (
     <section className={styles.testimonialsSection}>
+      {/* Cleaned up the container structure */}
       <div className="container">
-        <div className={styles.container}>
-            <h2 className="section-title">What Our Patients Say</h2>
-            <p className="section-description">
-            At <span style={{ color: '#0b105a', fontWeight: 'bold' }}>JIPSI</span>, the satisfaction and well-being of our patients are our top priorities. Hear from those who have experienced firsthand the transformative care we provide. Our patients’ stories reflect the dedication, expertise, and compassion that define our approach to pain management and sports injury recovery. Read their testimonials to learn how we’ve helped them regain their health and return to an active, pain-free life.
-            </p>
-            <div className={styles.sliderContainer}>
-            <Slider {...settings}>
-                {testimonials.map((testimonial, index) => (
+        <h2 className="section-title">What Our Patients Say</h2>
+        <p className="section-description">
+          At JIPSI, the satisfaction and well-being of our patients are our top priorities. Hear from those who have experienced firsthand the transformative care we provide. Our patients’ stories reflect the dedication, expertise, and compassion that define our approach to pain management and sports injury recovery. Read their testimonials to learn how we’ve helped them regain their health and return to an active, pain-free life.
+        </p>
+        
+        {/* Restored the conditional class and key for a robust render */}
+        <div className={`${styles.sliderContainer} ${hasMounted ? styles.sliderReady : ''}`}>
+          {hasMounted && (
+            <Slider key={hasMounted ? 'slider-ready' : 'slider-loading'} {...settings}>
+              {testimonials.map((testimonial, index) => (
                 <div key={index} className={styles.testimonialCard}>
-                    <div className={styles.cardContent}>
+                  <div className={styles.cardContent}>
                     <div className={styles.rating}>
-                        {/* Create an array of 5 items and map over it to show stars */}
-                        {[...Array(5)].map((star, i) => (
+                      {[...Array(5)].map((star, i) => (
                         <FaStar key={i} color={i < testimonial.rating ? "#ffc107" : "#e4e5e9"} />
-                        ))}
+                      ))}
                     </div>
                     <p className={styles.testimonialText}>&quot;{testimonial.text}&quot;</p>
                     <h3 className={styles.patientName}>- {testimonial.name}</h3>
-                    </div>
+                  </div>
                 </div>
-                ))}
+              ))}
             </Slider>
-            </div>
+          )}
         </div>
       </div>
     </section>

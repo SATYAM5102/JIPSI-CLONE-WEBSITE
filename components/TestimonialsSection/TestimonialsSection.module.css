@@ -1,52 +1,65 @@
-/* components/TestimonialsSection/TestimonialsSection.module.css */
+/*
+  =======================================================
+  ===   DEFINITIVE & CLEANED CSS FOR TESTIMONIALS (V2)  ===
+  =======================================================
+*/
 
+/* --- Section Wrapper --- */
 .testimonialsSection {
   padding: 60px 0;
-  background-color: #f9f9f9; /* Light grey background */
+  background-color: #f9f9f9;
 }
 
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-} */
-
-.title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.description {
-  font-size: 1rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-  line-height: 1.6;
-}
-
+/* --- Slider Container & Readiness Fade-in --- */
 .sliderContainer {
-  padding: 0 20px; /* Add some padding so cards don't touch the edges */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.sliderContainer.sliderReady {
+  opacity: 1;
 }
 
-/* Style for each card in the slider */
+/* --- KEY FIX PART 1: Force Equal Height for all slides in a row --- */
+.sliderContainer :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+/* --- Individual Slide/Card Wrapper --- */
 .testimonialCard {
-  padding: 15px; /* This padding is outside the card content, creating the gap */
+  padding: 15px;
+  height: auto;
+  
+  /* 
+    =======================================================
+    === KEY FIX PART 2: THIS IS THE MOST IMPORTANT CHANGE ===
+    =======================================================
+    By making the slide wrapper itself a flex container,
+    we guarantee its direct child (.cardContent) can stretch to 100% height.
+  */
+  display: flex;
 }
 
+/* --- Card Content Box --- */
 .cardContent {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   text-align: left;
-  height: 300px; /* Give cards a fixed height */
+  
+  /* Flexbox layout for the inner content */
+  width: 100%; /* Ensure it takes full width of the card */
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
+/* --- Card Elements --- */
 .rating {
   margin-bottom: 15px;
+  display: flex;
+  gap: 2px;
 }
 
 .testimonialText {
@@ -54,26 +67,22 @@
   color: #555;
   line-height: 1.7;
   font-style: italic;
-  flex-grow: 1; /* Allows this element to take up available space */
+  flex-grow: 1; 
 }
 
 .patientName {
   font-size: 1rem;
   font-weight: bold;
   color: #333;
-  margin-top: auto; /* Pushes the name to the bottom */
+  margin-top: 20px; 
 }
 
-/* --- Customizing the carousel dots --- */
-
-/* UPDATED: Added .sliderContainer before :global */
+/* --- Carousel Dot Styles (inactive) --- */
 .sliderContainer :global(.slick-dots li button:before) {
   font-size: 12px;
-  color: #301981 !important; /* Use our new brand color */
+  color: #301981 !important;
 }
-
-/* UPDATED: Added .sliderContainer before :global */
 .sliderContainer :global(.slick-dots li.slick-active button:before) {
   opacity: 1;
-  color: #f37021 !important; /* Use our orange brand color for the active dot */
+  color: #f37021 !important;
 }

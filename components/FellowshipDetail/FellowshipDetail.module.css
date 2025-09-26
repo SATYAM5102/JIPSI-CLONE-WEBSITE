@@ -1,0 +1,101 @@
+.detailSection {
+  padding: 80px 0;
+}
+
+.mainContent p {
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mainContent p a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.mainContent strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: #0b10a5;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.1rem;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 60px 0;
+}
+
+/* Section Titles (e.g., About Faculty) */
+.sectionTitle {
+  font-size: 2rem;
+  color: #0b10a5;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Faculty Section */
+.facultyGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.facultyText p {
+  margin-bottom: 15px;
+}
+
+.facultyImage {
+  text-align: center;
+}
+
+/* Meta Info & Download Button */
+.metaInfo {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #f37021;
+}
+
+.metaInfo p {
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.downloadButton {
+  display: inline-block;
+  background-color: #f37021;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.downloadButton:hover {
+  background-color: #d85c14;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .mainTitle, .sectionTitle {
+    font-size: 1.8rem;
+  }
+  .facultyGrid {
+    grid-template-columns: 1fr;
+  }
+  .facultyImage {
+    order: -1;
+    margin-bottom: 30px;
+  }
+}

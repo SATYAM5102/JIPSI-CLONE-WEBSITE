@@ -1,18 +1,24 @@
+import { useState, useEffect } from 'react';
 import styles from './VideoGallerySection.module.css';
 import Slider from 'react-slick';
-import VideoPlayerCard from './VideoPlayerCard'; // Import our new self-contained component
-import { withBasePath } from '../../utils/basePath';
 
+// Data now contains iframe embed URLs
 const videos = [
-  { thumbnail: withBasePath('/images/video-thumb-1.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=sEe7pl4gG5g' },
-  { thumbnail: withBasePath('/images/video-thumb-2.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=FLeFfJ1a4iQ' },
-  { thumbnail: withBasePath('/images/video-thumb-3.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=uA0GfjS_g5g' },
-  { thumbnail: withBasePath('/images/video-thumb-4.jpg'), youtubeLink: 'https://www.youtube.com/watch?v=PbiwT-8I92g' }
+  { embedUrl: 'https://www.youtube.com/embed/kvRndvdHvVo?si=dhRhc1WfpsQ3z3dV' },
+  { embedUrl: 'https://www.youtube.com/embed/HWuawDYA8eY?si=XzMsNdmfv5Narpuq' },
+  { embedUrl: 'https://www.youtube.com/embed/sv1FN98iN9U?si=XCySrvfBbXnqfK9w' },
+  { embedUrl: 'https://www.youtube.com/embed/XehgpNxsj14?si=dkH9MddRBCSO9h_b' }
 ];
 
 const VideoGallerySection = () => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const settings = {
-    dots: false,
+    dots: false, // You can enable these if you want
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -20,8 +26,24 @@ const VideoGallerySection = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1 } }
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
     ]
   };
 
@@ -32,15 +54,24 @@ const VideoGallerySection = () => {
         <p className="section-description">
           Explore our Video Gallery to learn more about the innovative treatments and services we offer at <span style={{ color: '#0b105a', fontWeight: 'bold' }}>JIPSI</span>. From patient success stories to informative videos on pain management and sports injury recovery, our gallery provides valuable insights into how we help you regain your health and vitality. Watch and discover the difference our expert care can make.
         </p>
-        <div className={styles.sliderContainer}>
-          <Slider {...settings}>
-            {videos.map((video, index) => (
-              <div key={index} className={styles.videoCard}>
-                {/* Render our new component and pass the video data to it */}
-                <VideoPlayerCard video={video} />
-              </div>
-            ))}
-          </Slider>
+        <div className={`${styles.sliderContainer} ${hasMounted ? styles.sliderReady : ''}`}>
+          {hasMounted && (
+            <Slider key={hasMounted ? 'slider-ready' : 'slider-loading'} {...settings}>
+              {videos.map((video, index) => (
+                <div key={index} className={styles.videoCard}>
+                  <div className={styles.playerWrapper}>
+                    <iframe
+                      src={video.embedUrl}
+                      title={`YouTube video ${index + 1}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       </div>
     </section>

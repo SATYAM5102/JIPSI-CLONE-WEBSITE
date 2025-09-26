@@ -20,6 +20,27 @@
   text-align: center;
 } */
 
+/* ... all other styles ... */
+
+@media (max-width: 768px) {
+  .servicesContainer {
+    -webkit-mask-image: none; /* Remove the fade effect */
+    mask-image: none;
+    overflow: visible; /* Allow wrapping */
+  }
+
+  .servicesGrid {
+    animation: none; /* STOP the animation */
+    flex-wrap: wrap; /* Allow items to wrap to new lines */
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .serviceCard {
+    width: calc(50% - 15px); /* Show two cards side-by-side */
+  }
+}
+
 .title {
   font-size: 2.5rem;
   margin-bottom: 20px;

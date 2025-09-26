@@ -1,0 +1,85 @@
+.gallerySection {
+  padding: 80px 0;
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.filterButtons button {
+  background-color: #f37021;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filterButtons button.active,
+.filterButtons button:hover {
+  background-color: #301981; /* Dark blue for active/hover */
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.imageWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.05);
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.viewMoreContainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.viewMoreButton {
+  background-color: #301981;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.viewMoreButton:hover {
+  background-color: #2d0b5a;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+}

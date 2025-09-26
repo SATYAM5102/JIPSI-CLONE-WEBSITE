@@ -1,0 +1,137 @@
+/*
+  ==============================================
+  ===   NEW, CLEAN & DEFINITIVE CSS FOR FELLOWSHIP PAGE  ===
+  ==============================================
+*/
+
+/* --- Main Section Wrapper --- */
+.contentSection {
+  padding: 80px 0;
+}
+
+/* --- Top Introduction Block --- */
+.introBlock {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.introBlock p {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* --- Section Titles --- */
+.mainTitle {
+  font-size: 2.5rem;
+  color: #0b105a;
+  margin-bottom: 20px;
+}
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* --- Horizontal Divider Line --- */
+.divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 80px 0;
+}
+
+/* 
+  --- Program Block Layout (Desktop First) ---
+  This is the new, robust flexbox layout.
+*/
+.programBlock {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.programDetails {
+  flex: 2; /* Takes up 2/3 of the space */
+}
+
+.programImage {
+  flex: 1; /* Takes up 1/3 of the space */
+  display: flex; /* Helps align the image inside */
+  justify-content: center;
+  align-items: center;
+}
+.programImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* --- Program Content Styling --- */
+.programTitle {
+  font-size: 2.2rem;
+  color: #0b105a;
+  margin-bottom: 20px;
+}
+
+.metaInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.programDetails p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.learnMoreButton {
+  display: inline-block;
+  background-color: #f37021;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.learnMoreButton:hover {
+  background-color: #d85c14;
+}
+
+/* 
+  ==============================================
+  ===   NEW & CORRECTED RESPONSIVE STYLES      ===
+  ==============================================
+*/
+@media (max-width: 900px) {
+  /* On tablets and mobile, switch the flex direction to column */
+  .programBlock {
+    flex-direction: column;
+  }
+
+  /* 
+    This is the key fix for mobile layout.
+    The 'order' property lets us change the visual order of elements.
+    By default, 'details' is order 0 and 'image' is order 0.
+    Here, we tell 'image' to appear *after* 'details'.
+  */
+  .programDetails {
+    order: 2;
+  }
+  .programImage {
+    order: 1;
+    margin-bottom: 30px;
+    width: 100%; /* Ensure the image container takes full width */
+  }
+
+  /* Adjust title sizes on all smaller screens */
+  .mainTitle, .programTitle {
+    font-size: 2rem;
+  }
+}
