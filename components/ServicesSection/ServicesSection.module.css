@@ -1,101 +1,54 @@
-/* First, define the scrolling animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* We move it 50% because our list is duplicated. This creates a perfect loop. */
-    transform: translateX(-50%);
-  }
-}
+/*
+  ==============================================================
+  ===   DEFINITIVE & ROBUST CSS FOR SERVICES CAROUSEL        ===
+  ==============================================================
+*/
 
 .servicesSection {
-  padding: 60px 0; /* Changed padding to 0 on the sides */
+  padding: 60px 0;
   background-color: #ffffff;
 }
 
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-} */
-
-/* ... all other styles ... */
-
-@media (max-width: 768px) {
-  .servicesContainer {
-    -webkit-mask-image: none; /* Remove the fade effect */
-    mask-image: none;
-    overflow: visible; /* Allow wrapping */
-  }
-
-  .servicesGrid {
-    animation: none; /* STOP the animation */
-    flex-wrap: wrap; /* Allow items to wrap to new lines */
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .serviceCard {
-    width: calc(50% - 15px); /* Show two cards side-by-side */
-  }
+/* --- Slider Container & Readiness Fade-in --- */
+.sliderContainer {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.sliderContainer.sliderReady {
+  opacity: 1;
 }
 
-.title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.description {
-  font-size: 1rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-  line-height: 1.6;
-  text-align: justify; /* Justify the text as requested */
-  padding: 0 20px; /* Add padding here so it doesn't touch the edges */
-}
-
-/* This is the container that will hide the overflow */
-.servicesContainer {
-  width: 100%;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.servicesGrid {
-  display: flex; /* Make it a flex container to align items in a row */
-  width: max-content; /* Ensure the grid is wide enough to hold all items */
-  /* Animation properties */
-  animation: scroll 30s linear infinite; /* Adjust 30s to make it faster or slower */
-}
-
-/* Pause the animation on hover for better user experience */
-.servicesContainer:hover .servicesGrid {
-  animation-play-state: paused;
-}
-
+/* --- Individual Slide/Card --- */
 .serviceCard {
-  display: flex;
+  text-align: center;
+  outline: none; 
+  display: flex !important;
   flex-direction: column;
   align-items: center;
-  padding: 0 25px; /* Add space between cards */
+  justify-content: flex-start;
+  height: 180px;
 }
 
 .iconWrapper {
   margin-bottom: 15px;
-  transition: transform 0.3s ease; /* Your hover animation */
+  transition: transform 0.3s ease;
 }
 
 .serviceCard:hover .iconWrapper {
-  transform: scale(1.1); /* Your hover animation */
+  transform: scale(1.1);
 }
 
 .serviceName {
   font-size: 1rem;
   font-weight: 500;
   color: #444;
-  white-space: nowrap; /* Prevent names from wrapping to a new line */
+  padding: 0 10px;
+  white-space: normal;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+  .serviceCard {
+    height: auto;
+  }
 }
